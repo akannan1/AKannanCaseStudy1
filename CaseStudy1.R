@@ -22,4 +22,7 @@ education <- read.csv("C:/Users/user/Desktop/Education.csv",header=TRUE)
 FullData <- merge(gdp,education,by="CountryCode")
 FullDataSorted <- FullData[order(FullData$gdp,na.last=NA),]
 FullData$quantile <- cut(FullDataSorted$V2,5)
-FullDataFinalTable <- table(FullDataSorted$quantile,FullDataSorted$Income.Group)
+QuantileIncomeTable <- table(FullDataSorted$quantile,FullDataSorted$Income.Group)
+
+##Plot GDP
+ggplot2<-plot(gdp)
